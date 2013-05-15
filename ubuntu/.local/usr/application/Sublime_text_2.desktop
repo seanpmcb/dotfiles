@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Name=Sublime Text 2
+GenericName=Text Editor
+Exec=/home/sean/bin/sublime_text %F
+Type=Application
+StartupNotify=true
+Comment=Sublime Text Editor
+Icon=/home/sean/etc/sublime_text_2/Icon/48x48/sublime_text.png
+Categories=TextEditor;IDE;Development
+X-Ayatana-Desktop-Shortcuts=NewWindow
+
+[NewWindow Shortcut Group]
+Name=New Window
+Exec=sublime -n
+TargetEnvironment=Unity
