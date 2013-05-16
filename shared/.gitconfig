@@ -37,8 +37,7 @@
     bra = branch -ra
 
 # Diff
-    diff = diff --word-diff
-    d = diff --word-diff
+    d = diff --word-diff=color
     dc = diff --cached
     dl = "!git ll -1"
     # Diff last commit
