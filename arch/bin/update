@@ -1,1 +1,12 @@
-yay; sudo npm update -g; sudo snap refresh
+#!/bin/zsh
+
+yay
+
+sudo npm update -g
+
+sudo snap refresh
+
+yay -Yc
+
+yay -P --stats
+
