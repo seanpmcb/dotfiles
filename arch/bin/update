@@ -35,10 +35,10 @@ fi
 yay
 
 echo ":: Updating npm packages"
-sudo npm update -g
+npm update -g
 
 echo ":: Updating flatpak packages"
-sudo flatpak update
+sudo flatpak update --app
 
 echo ":: Updating snap packages"
 sudo snap refresh
@@ -46,5 +46,7 @@ sudo snap refresh
 echo ":: CLeaning up orphaned dependencies"
 yay -Yc
 
+echo
+echo ":: Here are some fun stats"
 yay -P --stats
 
