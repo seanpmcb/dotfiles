@@ -3,6 +3,9 @@
 update_npm=false
 update_node_gyp=false
 
+echo ":: Updating Oh My Zsh"
+zsh -ic "omz update"
+
 echo ":: Searching for npm and node-gyp updates"
 
 for package in ${checkupdates}; do
