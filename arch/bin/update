@@ -1,44 +1,6 @@
 #!/bin/zsh
 
-update_npm=false
-update_node_gyp=false
-
-echo ":: Updating Oh My Zsh"
-zsh -ic "omz update"
-
-echo ":: Searching for npm and node-gyp updates"
-
-for package in ${checkupdates}; do
-	if [[ $package =~ "npm" ]]
-	then
-		echo " npm needs to be reinstalled"
-		update_npm=true
-    npm_packages="${npm_packages} npm"
-	fi
-
-	if [[ $package =~ "node-gyp" ]]
-	then
-		echo " node-gyp needs to be reinstalled"
-		update_node_gyp=true
-		# To avoid breaking dependencies we need to reinstall npm whenever we reinstall node-gyp
-		npm_packages="${npm_packages} npm node-gyp"
-	fi
-done
-
-if [[ $update_npm = true || $update_node_gyp = true ]]
-then
-	echo ":: Reinstalling - ${npm_packages}"
-	sudo npm r -g $npm_packages
-	yay -R $npm_packages
-	yay -S $npm_packages
-else
-  echo " there is nothing to do"
-fi
-
 yay
-
-echo ":: Updating npm packages"
-npm update -g
 
 echo ":: Updating flatpak packages"
 sudo flatpak update --app
@@ -52,4 +14,7 @@ yay -Yc
 echo
 echo ":: Here are some fun stats"
 yay -P --stats
+
+echo ":: Updating Oh My Zsh"
+zsh -ic "omz update"
 
